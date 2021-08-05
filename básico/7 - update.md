@@ -5,7 +5,7 @@ A função UPDATE nada mais é do que o próprio nome diz, "Atualizar", com ela 
 Um exemplo de como você pode usa-la: 
 
 <p align="center">
-  <img src="/images/update.png" width="350" title="hover text">
+  <img src="/images/update.png" width="500" title="hover text">
 </p>
 
 Acima nós usamos novamente a função de format do MySQL e nela nós atualizamos a tabela contas e setamos valores nas colunas Score, Skin, e Dinheiro, ENQUANTO o ID do jogador for igual ao ID dele da tabela.
