@@ -3,7 +3,7 @@ A função DELETE é auto explicativa, ela deleta dados de uma coluna, com ela v
 Um exemplo de como você pode usa-la:
 
 <p align="center">
-  <img src="/images/delete.png" width="350" title="hover text">
+  <img src="/images/delete.png" width="750" title="hover text">
 </p>
 
 Acima nós usamos a função format nativa e deletados da tabela jogadores enquanto o nome for igual a o valor getado.
