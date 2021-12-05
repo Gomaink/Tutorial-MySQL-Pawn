@@ -24,6 +24,6 @@ Após isso iremos fazer uma verificação pra ver se tivemos sucesso ao tentar e
   <img src="/images/conexao3.png" width="350" title="hover text">
 </p>
 
-com a função mysql_errno() verificamos se não existe nenhum erro na hora de se conectar ao database e damos um imprimimos se tudo ocorreu corretamente caso contrário irá imprimir uma mensagem de erro.
+com a função mysql_errno() verificamos se não existe nenhum erro na hora de se conectar ao database e imprimimos se tudo ocorreu corretamente caso contrário irá imprimir uma mensagem de erro.
 
 Após isso basta chamar a public em OnGamemodeInit.
