@@ -3,23 +3,23 @@
 
 <br>
 
-1. [Apresentação](#-Apresentação)
+- 1. [Apresentação](#-Apresentação)
 
-2. [Instalação](#-Instalação)
+- 2. [Instalação](#-Instalação)
 
-3. [XAMPP](#-XAMPP)
+- 3. [XAMPP](#-XAMPP)
 
-4. [Conexão](#-Conexão)
+- 4. [Conexão](#-Conexão)
    
-6. [Create-Table](#-Create-Table)
+- 6. [Create-Table](#-Create-Table)
 
-7. [Insert-Into](#-Insert-Into)
+- 7. [Insert-Into](#-Insert-Into)
 
-8. [Update](#-Update)
+- 8. [Update](#-Update)
 
-9. [Delete](#-Delete)
+- 9. [Delete](#-Delete)
 
-10. [Select](#-Select)
+- 10. [Select](#-Select)
 
 <br>
 
