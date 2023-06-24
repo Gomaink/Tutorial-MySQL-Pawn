@@ -11,19 +11,19 @@
 
 - 4. [Conexão](#-Conexão)
    
-- 6. [Create-Table](#-Create-Table)
+- 6. [CREATE-TABLE](#-CREATE-TABLE)
 
-- 7. [Insert-Into](#-Insert-Into)
+- 7. [INSERT-INTO](#-INSERT-INTO)
 
-- 8. [Update](#-Update)
+- 8. [UPDATE](#-UPDATE)
 
-- 9. [Delete](#-Delete)
+- 9. [DELETE](#-DELETE)
 
-- 10. [Select](#-Select)
+- 10. [SELECT](#-SELECT)
 
 <br>
 
-# Apresentação
+## 🚀 Apresentação
 
 Olá programadores. Recentemente vi que na comunidade SAMP está faltando orientações em questão ao MySQL então resolvi dar partida e montar um "tutorial" de como Instalar e Utilizar MySQL em seu Gamemode.
 
@@ -33,7 +33,7 @@ Neste tutorial você precisa se certificar de que já sabe como usar variaveis e
 
 Créditos: github.com/Gomaink
 
-## Instalação
+## 🚀 Instalação
 
 Para instalar o MySQL em seu GM é fácil, irei explicar como instalar ele no OS Windows, mas o mesmo pode ser feito no Linux.
 Acesse o link: https://github.com/pBlueG/SA-MP-MySQL/releases e instale a versão R41-4 mysql-R41-4-win32.zip.
@@ -48,7 +48,7 @@ Após a instalação, extraia o arquivo copie os arquivos e cole na pasta do seu
   <img src="/images/mysql2.png" width="350" title="hover text">
 </p>
 
-## XAMPP
+## 🚀 XAMPP
 
 Para você poder acessar um banco de dados local você irá precisar do XAMPP no Windows.
 
@@ -73,7 +73,7 @@ Na esquerda irá ter um botão chamado "Novo DB", coloque um nome pro database, 
   <img src="/images/php2.png" width="350" title="hover text">
 </p>
 
-## Conexão
+## 🚀 Conexão
 
 Nesta parte iremos aprender a como criar um banco de dados e uma simples tabela.
 Em sua GM crie uma variavel com o prefix de MySQL, você pode optar por algo como: "new MySQL:Connection" é por esta variavel que iremos estabelecer uma conexao com o banco de dados.
@@ -103,7 +103,7 @@ com a função mysql_errno() verificamos se não existe nenhum erro na hora de s
 
 Após isso basta chamar a public em OnGamemodeInit.
 
-## Create-Table
+## 🚀 CREATE-TABLE
 
 Para criarmos uma tabela, iremos utilizar a função CREATE TABLE, você poder ver a função mais a fundo por este link: https://www.w3schools.com/sql/sql_create_table.asp
 
@@ -123,7 +123,7 @@ Após isso criamos uma coluna chamada skin de valor inteiro limitado a 20 numero
 
 Viu como é fácil criar um banco de dados e uma tabela em MySQL?
 
-## Insert-Into
+## 🚀 INSERT-INTO
 
 A função INSERT INTO funciona como proprio nome diz, "INSERIR EM" com ela você pode inserir dados em uma tabela.
 
@@ -139,7 +139,7 @@ Lembrando que você está inserindo dados e não atualizando-os, existe uma fun�
 
 Mais sobre a função INSERT INTO: https://www.w3schools.com/sql/sql_insert.asp
 
-## Update
+## 🚀 UPDATE
 
 A função UPDATE nada mais é do que o próprio nome diz, "Atualizar", com ela nós podemos atualizar dados inseridos em colunas, e é com ela que fazemos por exemplo um sistema de salvamento de contas.
 
@@ -155,7 +155,7 @@ Para facilitar o entendimento, lembra do AUTO_INCREMENT e PRIMARY KEY que coloca
 
 Você pode ver mais sobre a função UPDATE aqui: https://www.w3schools.com/php/php_mysql_update.asp
 
-## Delete
+## 🚀 DELETE
 
 A função DELETE é auto explicativa, ela deleta dados de uma coluna, com ela você pode por exemplo deletar a conta de um jogador sem precisar ir manualmente ao database.
 
@@ -171,7 +171,7 @@ Então nós deletamos todos os dados do jogador cujo o nome foi getado e que est
 
 Você pode ver mais sobre a função DELETE aqui: https://www.w3schools.com/php/php_mysql_delete.asp
 
-## Select
+## 🚀 SELECT
 
 A função SELECT serve na maioria das vezes para resgatar um dado do database.
 
