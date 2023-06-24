@@ -1,5 +1,5 @@
 # Tutorial-MySQL-Pawn
-> Um básico curso de MySQL aplicado em Pawn.
+> Um básico tutorial de MySQL aplicado em Pawn.
 
 <br>
 
