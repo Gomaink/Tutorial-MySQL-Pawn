@@ -25,7 +25,7 @@
 
 ## 🚀 Apresentação
 
-Olá. Recentemente vi que na comunidade SAMP está faltando orientações em questão ao MySQL então resolvi dar partida e montar um "tutorial" de como Instalar e Utilizar MySQL em seu Gamemode.
+Olá. Recentemente vi que na comunidade SA:MP está faltando orientações em questão ao MySQL então resolvi dar partida e montar um "tutorial" de como Instalar e Utilizar MySQL em seu Gamemode.
 
 Quero deixar bem claro que em todos os módulos do tutorial iremos utilizar a mesma estrutura de sistema.
 
