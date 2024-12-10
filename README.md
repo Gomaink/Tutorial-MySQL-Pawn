@@ -57,7 +57,7 @@ XAMPP é um pacote de software que inclui um servidor web (Apache), um banco de 
 
 Com o XAMPP, você pode instalar e gerenciar o MySQL de forma fácil, além de realizar testes e desenvolvimento local de forma rápida e eficiente.
 
-Resumo:
+### Resumo:
 - SQL: Linguagem para interagir com bancos de dados.
 - MySQL: Sistema de gerenciamento de bancos de dados que utiliza SQL.
 - XAMPP: Ambiente de desenvolvimento local que facilita o uso do MySQL e de outras ferramentas.
