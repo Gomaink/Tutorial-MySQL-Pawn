@@ -59,7 +59,7 @@ Resumo:
 
 O processo de instalação do MySQL no seu gamemode é simples. A seguir, explicarei como realizar a instalação no Windows. No entanto, o mesmo procedimento pode ser adaptado para Linux.
 
-1.	Baixe os arquivos necessários:
+### 1.	Baixe os arquivos necessários:
 
 Acesse o repositório oficial do plugin no GitHub pelo link:
 https://github.com/pBlueG/SA-MP-MySQL/releases.
@@ -72,7 +72,7 @@ Baixe a versão R41-4 (arquivo mysql-R41-4-win32.zip).
 
 
 
-2.	Extraia e copie os arquivos:
+### 2.	Extraia e copie os arquivos:
 
 Após baixar o arquivo, extraia o conteúdo. Em seguida, copie os arquivos extraídos para a pasta do seu gamemode.
 
@@ -86,7 +86,7 @@ Com isso, o plugin MySQL estará pronto para ser utilizado no seu projeto.
 
 Para acessar e gerenciar um banco de dados local, utilizaremos o XAMPP, uma ferramenta que facilita a instalação e execução de servidores web e bancos de dados no Windows.
 
-1. Baixando e instalando o XAMPP
+### 1. Baixando e instalando o XAMPP
 
 - Acesse o site oficial do XAMPP: https://www.apachefriends.org/pt_br/index.html.
 - Baixe a versão adequada ao seu sistema operacional e prossiga com a instalação. O processo é simples e não exige configurações avançadas.
@@ -96,7 +96,7 @@ Para acessar e gerenciar um banco de dados local, utilizaremos o XAMPP, uma ferr
 </p>  
 
 
-2. Iniciando os serviços necessários
+### 2. Iniciando os serviços necessários
 
 - Após instalar, abra o Painel de Controle do XAMPP.
 - Você verá várias opções, como Apache, MySQL e outros serviços. Para este tutorial, utilizaremos apenas o Apache e o MySQL.
@@ -107,11 +107,11 @@ Para acessar e gerenciar um banco de dados local, utilizaremos o XAMPP, uma ferr
 </p>  
 
 
-3. Acessando o PhpMyAdmin
+### 3. Acessando o PhpMyAdmin
 
 - Com o serviço MySQL em execução, clique no botão Admin ao lado dele. Isso abrirá o PhpMyAdmin em seu navegador. O PhpMyAdmin é uma interface gráfica que permite gerenciar bancos de dados facilmente.
 
-4. Criando um banco de dados
+### 4. Criando um banco de dados
 
 - No lado esquerdo do PhpMyAdmin, clique em Novo ou New.
 - Insira um nome para o banco de dados. Por exemplo, database (sem espaços ou caracteres especiais).
@@ -136,7 +136,7 @@ Com o banco de dados criado e configurado, você já pode integrá-lo ao seu gam
 
 Nesta etapa, aprenderemos como criar um banco de dados, configurar uma conexão simples e verificar se ela foi estabelecida com sucesso.
 
-1. Criando uma variável para a conexão
+### 1. Criando uma variável para a conexão
 
 No seu gamemode, crie uma variável para gerenciar a conexão com o banco de dados. É recomendável usar um prefixo que identifique claramente a relação com o MySQL, como:
 
@@ -144,7 +144,7 @@ No seu gamemode, crie uma variável para gerenciar a conexão com o banco de dad
 
 Essa variável será usada para armazenar os dados da conexão ativa com o banco de dados.
 
-2. Criando a função de inicialização da conexão
+### 2. Criando a função de inicialização da conexão
 
 Agora, crie uma função pública responsável por estabelecer a conexão com o banco de dados. Um exemplo prático seria:
 
@@ -153,7 +153,7 @@ Agora, crie uma função pública responsável por estabelecer a conexão com o 
 </p>  
 
 
-3. Estabelecendo a conexão
+### 3. Estabelecendo a conexão
 
 Dentro dessa função, usaremos a função mysql_connect para estabelecer a conexão. Ela recebe os seguintes parâmetros:
 
@@ -169,7 +169,7 @@ Um exemplo seria:
 </p>  
 
 
-4. Verificando se a conexão foi bem-sucedida
+### 4. Verificando se a conexão foi bem-sucedida
 
 Após tentar a conexão, é fundamental verificar se houve sucesso. Isso pode ser feito com a função mysql_errno(), que retorna o código do erro, caso exista.
 
@@ -183,7 +183,7 @@ A verificação pode ser feita assim:
 - Caso a conexão seja bem-sucedida: Exibimos uma mensagem informando que tudo está funcionando corretamente.
 - Caso haja erro: Exibimos a mensagem de erro e abortamos o processo.
 
-5. Chamando a função no OnGameModeInit
+### 5. Chamando a função no OnGameModeInit
 
 Por fim, chame a função de inicialização da conexão no callback OnGameModeInit, garantindo que o banco de dados seja configurado assim que o gamemode for carregado.
 
