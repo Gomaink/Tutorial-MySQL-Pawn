@@ -25,28 +25,61 @@
 
 ## 🚀 Apresentação
 
-Olá. Recentemente vi que na comunidade SA:MP está faltando orientações em questão ao MySQL então resolvi dar partida e montar um "tutorial" de como Instalar e Utilizar MySQL em seu Gamemode.
+Percebi que a comunidade de SA:MP carece de orientações claras sobre como integrar e usar MySQL em gamemodes. Por isso, decidi criar este tutorial para ajudar quem deseja instalar e trabalhar com MySQL em seus projetos.
 
-Quero deixar bem claro que em todos os módulos do tutorial iremos utilizar a mesma estrutura de sistema.
+Antes de começarmos, quero destacar que, ao longo deste tutorial, utilizaremos uma estrutura padrão para todos os exemplos e módulos, garantindo consistência e clareza.
 
-Neste tutorial você precisa se certificar de que já sabe como usar variaveis e funções nativas do SAMP, será um tutorial focado no MySQL e não em funções nativas.
+Pré-requisitos:
+Este tutorial foca exclusivamente no uso do MySQL com SA:MP. Portanto, é importante que você já tenha familiaridade com variáveis e funções nativas do SA:MP, pois não abordaremos esses conceitos aqui.
 
-Créditos: github.com/Gomaink
+Créditos:
+Desenvolvido por Gomaink.
+
+## 🚀 O que são SQL, MySQL e XAMPP?
+
+Para trabalhar com MySQL no desenvolvimento de gamemodes ou qualquer outro tipo de aplicação, é essencial entender alguns conceitos fundamentais:
+
+1 - SQL (Structured Query Language):
+SQL é uma linguagem padrão utilizada para gerenciar e manipular bancos de dados relacionais. Com SQL, você pode criar tabelas, inserir dados, atualizá-los, excluí-los e realizar consultas complexas. É a base de quase todas as interações com bancos de dados, independentemente do software utilizado.
+
+2 - MySQL:
+MySQL é um sistema de gerenciamento de banco de dados (SGBD) que utiliza a linguagem SQL. Ele é amplamente utilizado por sua eficiência, escalabilidade e simplicidade. O MySQL permite que você armazene e recupere informações de forma organizada e segura, sendo ideal para aplicações que requerem o armazenamento de grandes volumes de dados, como websites, sistemas de gerenciamento e gamemodes no SA:MP.
+
+3 - XAMPP:
+XAMPP é um pacote de software que inclui um servidor web (Apache), um banco de dados (MySQL/MariaDB) e interpretadores para linguagens como PHP e Perl. Ele é uma solução prática para configurar um ambiente de desenvolvimento local em seu computador, permitindo testar aplicações que utilizam bancos de dados e servidores web sem a necessidade de configurá-los manualmente.
+
+Com o XAMPP, você pode instalar e gerenciar o MySQL de forma fácil, além de realizar testes e desenvolvimento local de forma rápida e eficiente.
+
+Resumo:
+- SQL: Linguagem para interagir com bancos de dados.
+- MySQL: Sistema de gerenciamento de bancos de dados que utiliza SQL.
+- XAMPP: Ambiente de desenvolvimento local que facilita o uso do MySQL e de outras ferramentas.
 
 ## 🚀 Instalação
 
-Para instalar o MySQL em seu GM é fácil, irei explicar como instalar ele no OS Windows, mas o mesmo pode ser feito no Linux.
-Acesse o link: https://github.com/pBlueG/SA-MP-MySQL/releases e instale a versão R41-4 mysql-R41-4-win32.zip.
+O processo de instalação do MySQL no seu gamemode é simples. A seguir, explicarei como realizar a instalação no Windows. No entanto, o mesmo procedimento pode ser adaptado para Linux.
+	1.	Baixe os arquivos necessários:
+Acesse o repositório oficial do plugin no GitHub pelo link:
+https://github.com/pBlueG/SA-MP-MySQL/releases.
+Baixe a versão R41-4 (arquivo mysql-R41-4-win32.zip).
 
 <p align="center">
-  <img src="/images/mysql.png" width="350" title="hover text">
-</p>
+  <img src="/images/mysql.png" width="350" title="Tela de download do MySQL">
+</p>  
 
-Após a instalação, extraia o arquivo copie os arquivos e cole na pasta do seu gamemode.
+
+
+	2.	Extraia e copie os arquivos:
+Após baixar o arquivo, extraia o conteúdo. Em seguida, copie os arquivos extraídos para a pasta do seu gamemode.
 
 <p align="center">
-  <img src="/images/mysql2.png" width="350" title="hover text">
-</p>
+  <img src="/images/mysql2.png" width="350" title="Arquivos MySQL extraídos">
+</p>  
+
+
+
+
+Com isso, o plugin MySQL estará pronto para ser utilizado no seu projeto.
 
 ## 🚀 XAMPP
 
