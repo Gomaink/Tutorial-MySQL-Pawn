@@ -309,66 +309,186 @@ Com o comando INSERT INTO, você tem uma ferramenta poderosa para gerenciar os d
 
 ## 🚀 UPDATE
 
-A função UPDATE nada mais é do que o próprio nome diz, "Atualizar", com ela nós podemos atualizar dados inseridos em colunas, e é com ela que fazemos por exemplo um sistema de salvamento de contas.
+A função UPDATE é utilizada para modificar os valores de uma ou mais colunas em um registro específico de uma tabela. Como o próprio nome sugere, ela serve para “atualizar” informações já existentes.
 
-Um exemplo de como você pode usa-la: 
+Um exemplo clássico é o uso do UPDATE em sistemas de salvamento de contas, onde os dados de um jogador (como pontuação, skin, ou dinheiro) são atualizados no banco de dados.
+
+### 1. Como funciona o UPDATE
+
+A estrutura básica do comando é:
+
+```sql
+UPDATE tabela  
+SET coluna1 = valor1, coluna2 = valor2  
+WHERE condição;  
+```
+
+- SET: Define as colunas que serão alteradas e seus novos valores.
+- WHERE: Especifica qual registro será atualizado, garantindo que apenas os dados corretos sejam modificados.
+
+### 2. Exemplo no Gamemode
+
+Veja abaixo um exemplo prático de uso no seu gamemode:
 
 <p align="center">
-  <img src="/images/update.png" width="500" title="hover text">
-</p>
+  <img src="/images/update.png" width="500" title="Exemplo de uso do UPDATE">
+</p>  
 
-Acima nós usamos novamente a função de format do MySQL e nela nós atualizamos a tabela contas e setamos valores nas colunas Score, Skin, e Dinheiro, ENQUANTO o ID do jogador for igual ao ID dele da tabela.
 
-Para facilitar o entendimento, lembra do AUTO_INCREMENT e PRIMARY KEY que colocamos na coluna ID no modulo 5? Ele é algo único cada Player tem o seu e você pode criar sistemas de ID FIXO por exemplo, então nós atualizamos a tabela contas, setamos valores nas colunas e setamos no jogador da tabela que tem o ID formatado, em vez de ID você pode usar o nome dele, porém considero mais fácil da forma acima.
+Neste caso:
+- Usamos a função format do MySQL para montar a consulta de forma dinâmica.
+- Atualizamos a tabela contas, alterando os valores das colunas Score, Skin, e Dinheiro.
+- A condição WHERE garante que apenas o registro do jogador com o ID correspondente será atualizado.
 
-Você pode ver mais sobre a função UPDATE aqui: https://www.w3schools.com/php/php_mysql_update.asp
+### 3. Por que usar o ID como referência?
+
+No exemplo acima, usamos o ID como referência para identificar o registro correto a ser atualizado. Isso é possível graças às configurações de AUTO_INCREMENT e PRIMARY KEY que criamos no módulo anterior:
+- ID é único: Cada jogador possui um ID exclusivo na tabela. Isso evita erros ao atualizar dados.
+- Alternativa com o Nome: Também é possível usar o nome do jogador como referência, mas o ID é geralmente mais confiável, pois evita problemas com nomes duplicados ou alterações de nome.
+
+### 4. Dicas de Implementação
+
+- Otimização de Consultas:
+Atualize apenas os dados necessários. Por exemplo, não atualize colunas que não sofreram alterações. Isso reduz a carga no banco de dados.
+- Evite Sobrescritas Acidentais:
+Sempre use o WHERE para especificar qual registro deve ser atualizado. Um comando UPDATE sem WHERE irá alterar todos os registros da tabela, o que pode causar grandes problemas.
+
+###5. Uso Prático
+
+O comando UPDATE é ideal para diversas situações, como:
+- Salvar o progresso de um jogador.
+- Atualizar estatísticas (ex.: kills, mortes, dinheiro).
+- Gerenciar alterações de configurações.
+
+Com o UPDATE, você pode manter os dados do jogador sincronizados com o banco de dados, garantindo que nenhuma informação seja perdida entre sessões.
 
 ## 🚀 DELETE
 
-A função DELETE é auto explicativa, ela deleta dados de uma coluna, com ela você pode por exemplo deletar a conta de um jogador sem precisar ir manualmente ao database.
+A função DELETE é usada para remover registros de uma tabela. Como o próprio nome sugere, ela exclui dados específicos com base em uma condição. Por exemplo, você pode utilizá-la para excluir a conta de um jogador diretamente pelo gamemode, sem precisar acessar o banco de dados manualmente.
 
-Um exemplo de como você pode usa-la:
+### 1. Como funciona o DELETE
+
+A estrutura básica do comando é:
+
+```sql
+DELETE FROM tabela  
+WHERE condição;  
+```
+
+- DELETE FROM: Define a tabela de onde os dados serão removidos.
+- WHERE: Determina qual registro será excluído.
+
+⚠ Atenção:
+Sem o WHERE, o comando DELETE removerá todos os registros da tabela, o que pode causar perda de dados irreversível.
+
+### 2. Exemplo no Gamemode
+
+Veja um exemplo prático de como utilizar o DELETE:
 
 <p align="center">
-  <img src="/images/delete.png" width="750" title="hover text">
-</p>
+  <img src="/images/delete.png" width="750" title="Exemplo de uso do DELETE">
+</p>  
 
-Acima nós usamos a função format nativa e deletados da tabela jogadores enquanto o nome for igual a o valor getado.
 
-Então nós deletamos todos os dados do jogador cujo o nome foi getado e que estava na tabela jogadores.
+O que acontece aqui?
+- Utilizamos a função format para criar a consulta SQL.
+- O comando instrui o banco de dados a deletar um registro da tabela jogadores cujo nome seja igual ao valor obtido (por exemplo, o nome do jogador que solicitou a exclusão).
 
-Você pode ver mais sobre a função DELETE aqui: https://www.w3schools.com/php/php_mysql_delete.asp
+Nesse caso, todos os dados do jogador na tabela serão removidos.
+
+### 3. Por que usar DELETE?
+
+O comando DELETE é útil em diversas situações, como:
+- Excluir contas antigas ou inativas: Remova registros que não são mais necessários para liberar espaço no banco de dados.
+- Remoção manual por comando: Permita que administradores deletem contas diretamente do jogo.
+- Gestão de banimentos: Combine o DELETE com sistemas de punição para remover contas automaticamente.
+
+### 4. Dicas e Boas Práticas
+- Evite usar apenas o nome do jogador como referência:
+Nomes podem ser alterados ou duplicados. Sempre que possível, use identificadores únicos, como o ID, para garantir que o registro correto seja deletado.
+
+
+- Confirmação antes de deletar:
+Em sistemas que permitem deletar contas, ofereça uma etapa de confirmação ao jogador, como um diálogo ou mensagem, antes de realizar a exclusão definitiva.
+- Teste antes de usar em produção:
+Sempre teste comandos DELETE em um ambiente seguro para evitar exclusões acidentais.
+
+### 5. Conclusão
+
+A função DELETE é poderosa, mas exige cuidado em seu uso. Com ela, você pode manter o banco de dados organizado e atualizado, removendo registros desnecessários ou indesejados de forma prática e eficiente.
 
 ## 🚀 SELECT
 
-A função SELECT serve na maioria das vezes para resgatar um dado do database.
+A função SELECT é uma das mais usadas no SQL, permitindo resgatar informações de um banco de dados. Com ela, você pode consultar dados específicos ou coletar informações completas de tabelas para processar no seu sistema.
 
-Você pode utiliza-lo das seguintes formas:
+### 1. Como funciona o SELECT?
 
-<p align="center">
-  <img src="/images/select.png" width="750" title="hover text">
-</p>
+A sintaxe básica do comando é:
 
-Acima nós selecionamos tudo da tabela contas enquanto cujo o nome foi getado.
+```sql
+SELECT colunas  
+FROM tabela  
+WHERE condição;  
+```
 
-Devo deixar bem claro que o símbolo de asterisco (*) simboliza "all" ou "tudo" no SQL.
+- SELECT: Define quais colunas serão recuperadas.
+- FROM: Especifica a tabela onde os dados estão armazenados.
+- WHERE: Filtra os registros com base em condições específicas.
 
-Após essa consulta podemos puxar dados de uma tabela por exemplo, vocês veram mais sobre ainda.
+### 2. Exemplo no Gamemode
 
-Você também pode utilizar da seguinte forma:
+Veja como usar o SELECT em diferentes cenários:
 
-<p align="center">
-  <img src="/images/select2.png" width="750" title="hover text">
-</p>
-
-Aí você estaria selecionado apenas UMA coluna, que seria a coluna de Dinheiro.
-
-Você também pode utilizar com diversas tabelas como:
+#### a) Selecionando Todos os Dados de um Jogador
 
 <p align="center">
-  <img src="/images/select3.png" width="750" title="hover text">
-</p>
+  <img src="/images/select.png" width="750" title="Exemplo de SELECT com *">
+</p>  
 
-Aí você estaria selecionado duas colunas, no caso a Dinheiro e a Skin.
 
-Você pode ver mais sobre a função SELECT aqui: https://www.w3schools.com/php/php_mysql_select.asp
+Nesse exemplo:
+- O comando SELECT * instrui o banco de dados a retornar todas as colunas da tabela contas.
+- A condição WHERE Nome = '%s' garante que apenas os dados do jogador com o nome fornecido serão retornados.
+
+    - Nota: O asterisco (*) significa “todos” no SQL, ou seja, ele retorna todas as colunas da tabela.
+
+#### b) Selecionando Apenas Uma Coluna
+
+<p align="center">
+  <img src="/images/select2.png" width="750" title="Exemplo de SELECT com coluna específica">
+</p>  
+
+
+Neste caso:
+- Selecionamos apenas a coluna Dinheiro da tabela contas.
+- Essa abordagem é útil quando você precisa de um único dado, economizando processamento e largura de banda.
+
+#### c) Selecionando Múltiplas Colunas
+
+<p align="center">
+  <img src="/images/select3.png" width="750" title="Exemplo de SELECT com múltiplas colunas">
+</p>  
+
+
+Aqui:
+- Selecionamos as colunas Dinheiro e Skin.
+- Essa técnica permite recuperar somente os dados necessários, otimizando o desempenho da consulta.
+
+### 3. Dicas de Uso
+- Filtrando Dados com Precisão:
+Sempre utilize o WHERE para especificar quais registros deseja buscar. Isso evita retornar informações desnecessárias.
+- Lidando com Resultados:
+Após executar o SELECT, você pode armazenar e processar os dados no seu sistema, como exibir o dinheiro do jogador ou carregar sua skin com funções como chache_get_value_name
+
+
+- Evitando Sobrecarga no Banco de Dados:
+Sempre que possível, prefira especificar as colunas que deseja retornar, em vez de usar o *. Isso reduz o tráfego entre o banco e o servidor.
+
+### 4. Aplicação em Diversos Cenários
+
+A função SELECT é essencial para:
+- Carregar os dados do jogador ao conectar no servidor.
+- Exibir estatísticas ou rankings.
+- Verificar a existência de uma conta antes de registrá-la.
+
+Com o SELECT, você tem o controle total sobre quais informações deseja acessar e como utilizá-las no seu sistema.
