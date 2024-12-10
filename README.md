@@ -58,7 +58,9 @@ Resumo:
 ## 🚀 Instalação
 
 O processo de instalação do MySQL no seu gamemode é simples. A seguir, explicarei como realizar a instalação no Windows. No entanto, o mesmo procedimento pode ser adaptado para Linux.
-	1.	Baixe os arquivos necessários:
+
+1.	Baixe os arquivos necessários:
+
 Acesse o repositório oficial do plugin no GitHub pelo link:
 https://github.com/pBlueG/SA-MP-MySQL/releases.
 Baixe a versão R41-4 (arquivo mysql-R41-4-win32.zip).
@@ -69,15 +71,13 @@ Baixe a versão R41-4 (arquivo mysql-R41-4-win32.zip).
 
 
 
-	2.	Extraia e copie os arquivos:
+2.	Extraia e copie os arquivos:
+
 Após baixar o arquivo, extraia o conteúdo. Em seguida, copie os arquivos extraídos para a pasta do seu gamemode.
 
 <p align="center">
   <img src="/images/mysql2.png" width="350" title="Arquivos MySQL extraídos">
 </p>  
-
-
-
 
 Com isso, o plugin MySQL estará pronto para ser utilizado no seu projeto.
 
