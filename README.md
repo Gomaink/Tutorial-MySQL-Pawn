@@ -63,6 +63,7 @@ O processo de instalação do MySQL no seu gamemode é simples. A seguir, explic
 
 Acesse o repositório oficial do plugin no GitHub pelo link:
 https://github.com/pBlueG/SA-MP-MySQL/releases.
+
 Baixe a versão R41-4 (arquivo mysql-R41-4-win32.zip).
 
 <p align="center">
@@ -83,28 +84,53 @@ Com isso, o plugin MySQL estará pronto para ser utilizado no seu projeto.
 
 ## 🚀 XAMPP
 
-Para você poder acessar um banco de dados local você irá precisar do XAMPP no Windows.
+Para acessar e gerenciar um banco de dados local, utilizaremos o XAMPP, uma ferramenta que facilita a instalação e execução de servidores web e bancos de dados no Windows.
 
-Baixe e instale por este link: https://www.apachefriends.org/pt_br/index.html (É uma instalação normal, apenas prossiga)
+1. Baixando e instalando o XAMPP
 
-<p align="center">
-  <img src="/images/xampp.png" width="350" title="hover text">
-</p>
-
-Após a instalação abra o XAMPP, você irá se deparar com uma tela com opções como Apache, MySQL, FileZilla e entre outros, nós só iremos precisar do Apache e do MySQL, clique em start no Apache e no MySQL após isso clique em admin no MySQL e você já vai poder ter acesso ao PhpMyAdmin.
-<p align="center">
-  <img src="/images/xampp2.png" width="350" title="hover text">
-</p>
-
-Na esquerda irá ter um botão chamado "Novo DB", coloque um nome pro database, você pode optar por: database (Não coloque espaços e não altere a colação) após isso clique em criar.
+- Acesse o site oficial do XAMPP: https://www.apachefriends.org/pt_br/index.html.
+- Baixe a versão adequada ao seu sistema operacional e prossiga com a instalação. O processo é simples e não exige configurações avançadas.
 
 <p align="center">
-  <img src="/images/php.png" width="350" title="hover text">
-</p>
+  <img src="/images/xampp.png" width="350" title="Tela de instalação do XAMPP">
+</p>  
+
+
+2. Iniciando os serviços necessários
+
+- Após instalar, abra o Painel de Controle do XAMPP.
+- Você verá várias opções, como Apache, MySQL e outros serviços. Para este tutorial, utilizaremos apenas o Apache e o MySQL.
+- Clique no botão Start para iniciar ambos os serviços.
 
 <p align="center">
-  <img src="/images/php2.png" width="350" title="hover text">
-</p>
+  <img src="/images/xampp2.png" width="350" title="Tela do Painel de Controle do XAMPP">
+</p>  
+
+
+3. Acessando o PhpMyAdmin
+
+- Com o serviço MySQL em execução, clique no botão Admin ao lado dele. Isso abrirá o PhpMyAdmin em seu navegador. O PhpMyAdmin é uma interface gráfica que permite gerenciar bancos de dados facilmente.
+
+4. Criando um banco de dados
+
+- No lado esquerdo do PhpMyAdmin, clique em Novo ou New.
+- Insira um nome para o banco de dados. Por exemplo, database (sem espaços ou caracteres especiais).
+- Certifique-se de que a opção Colação (collation) permaneça como está (geralmente definida como utf8_general_ci por padrão).
+- Clique em Criar para finalizar.
+
+<p align="center">
+  <img src="/images/php.png" width="350" title="Criando um novo banco de dados no PhpMyAdmin">
+</p>  
+
+<p align="center">
+  <img src="/images/php2.png" width="350" title="Banco de dados criado no PhpMyAdmin">
+</p>  
+
+
+Dica Extra
+- O XAMPP também permite configurar senhas e permissões para usuários no MySQL. Para maior segurança, considere configurar uma senha para o usuário root nas opções do PhpMyAdmin.
+
+Com o banco de dados criado e configurado, você já pode integrá-lo ao seu gamemode.
 
 ## 🚀 Conexão
 
