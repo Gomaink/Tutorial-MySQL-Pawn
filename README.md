@@ -3,9 +3,9 @@
 
 <br>
 
-- 1. [Apresentação](#-Apresentação)
+- 1. [Introdução](#-Introdução)
 
-- 2. [O que são SQL, MySQL e XAMPP?](#-O que são SQL, MySQL e XAMPP?)
+- 2. O que são SQL, MySQL e XAMPP?
 
 - 3. [Instalação](#-Instalação)
 
@@ -25,7 +25,7 @@
 
 <br>
 
-## 🚀 Apresentação
+## 🚀 Introdução
 
 Percebi que a comunidade de SA:MP carece de orientações claras sobre como integrar e usar MySQL em gamemodes. Por isso, decidi criar este tutorial para ajudar quem deseja instalar e trabalhar com MySQL em seus projetos.
 
