@@ -39,13 +39,16 @@ Desenvolvido por Gomaink.
 
 Para trabalhar com MySQL no desenvolvimento de gamemodes ou qualquer outro tipo de aplicação, é essencial entender alguns conceitos fundamentais:
 
-1 - SQL (Structured Query Language):
+### 1. SQL (Structured Query Language):
+
 SQL é uma linguagem padrão utilizada para gerenciar e manipular bancos de dados relacionais. Com SQL, você pode criar tabelas, inserir dados, atualizá-los, excluí-los e realizar consultas complexas. É a base de quase todas as interações com bancos de dados, independentemente do software utilizado.
 
-2 - MySQL:
+### 2. MySQL:
+
 MySQL é um sistema de gerenciamento de banco de dados (SGBD) que utiliza a linguagem SQL. Ele é amplamente utilizado por sua eficiência, escalabilidade e simplicidade. O MySQL permite que você armazene e recupere informações de forma organizada e segura, sendo ideal para aplicações que requerem o armazenamento de grandes volumes de dados, como websites, sistemas de gerenciamento e gamemodes no SA:MP.
 
-3 - XAMPP:
+### 3. XAMPP:
+
 XAMPP é um pacote de software que inclui um servidor web (Apache), um banco de dados (MySQL/MariaDB) e interpretadores para linguagens como PHP e Perl. Ele é uma solução prática para configurar um ambiente de desenvolvimento local em seu computador, permitindo testar aplicações que utilizam bancos de dados e servidores web sem a necessidade de configurá-los manualmente.
 
 Com o XAMPP, você pode instalar e gerenciar o MySQL de forma fácil, além de realizar testes e desenvolvimento local de forma rápida e eficiente.
@@ -127,7 +130,7 @@ Para acessar e gerenciar um banco de dados local, utilizaremos o XAMPP, uma ferr
 </p>  
 
 
-Dica Extra
+### Dica Extra
 - O XAMPP também permite configurar senhas e permissões para usuários no MySQL. Para maior segurança, considere configurar uma senha para o usuário root nas opções do PhpMyAdmin.
 
 Com o banco de dados criado e configurado, você já pode integrá-lo ao seu gamemode.
@@ -140,7 +143,7 @@ Nesta etapa, aprenderemos como criar um banco de dados, configurar uma conexão 
 
 No seu gamemode, crie uma variável para gerenciar a conexão com o banco de dados. É recomendável usar um prefixo que identifique claramente a relação com o MySQL, como:
 
-'new MySQL:Connection;'
+`new MySQL:Connection;`
 
 Essa variável será usada para armazenar os dados da conexão ativa com o banco de dados.
 
@@ -189,23 +192,80 @@ Por fim, chame a função de inicialização da conexão no callback OnGameModeI
 
 ## 🚀 CREATE-TABLE
 
-Para criarmos uma tabela, iremos utilizar a função CREATE TABLE, você poder ver a função mais a fundo por este link: https://www.w3schools.com/sql/sql_create_table.asp
+Agora que já configuramos a conexão com o banco de dados, aprenderemos como criar uma tabela utilizando a função CREATE TABLE. Essa função é usada para definir a estrutura da tabela, incluindo colunas, tipos de dados e restrições.
+
+Para mais detalhes sobre CREATE TABLE, você pode conferir este link:
+Guia de CREATE TABLE - W3Schools
+
+### 1. Definindo a tabela com CREATE TABLE
+
+Para criar uma tabela no MySQL a partir do seu gamemode, utilizaremos a função mysql_query, que permite enviar comandos SQL diretamente ao banco de dados.
+
+No exemplo abaixo, criamos uma tabela chamada jogadores, mas só se ela ainda não existir (usando IF NOT EXISTS):
 
 <p align="center">
-  <img src="/images/table.png" width="350" title="hover text">
-</p>
+  <img src="/images/table.png" width="350" title="Código de criação de tabela">
+</p>  
 
-Com a função mysql_query executamos uma função no MySQL, então estamos pedindo pra o MySQL conectando-se aos valores que foram estabelecidos na variavel Connection, criar uma tabela se ela não existir chamada jogadores (CREATE TABLE IF NOT EXISTS `jogadores`) 
 
-Após isso definimos as colunas da tabela, ID recebendo um valor inteiro e sendo uma primary key e sendo auto incrementando (`ID` int AUTO_INCREMENT PRIMARY KEY)
+### 2. Definindo as colunas da tabela
 
-Uma coluna chamada Nome sendo ela uma string limitada a 24 caracteres e ela irá receber um valor nulo (`Nome` varchar(24) NOT NULL,\) 
+Aqui está a explicação das colunas que criamos no exemplo:
 
-Com a senha fazemos a mesma coisa que o Nome
+- ID:
+ - Tipo: int (inteiro).
+ - Características: É a Primary Key (chave primária) da tabela, ou seja, identifica cada registro de forma única. Também é configurada como AUTO_INCREMENT, o que faz com que o valor seja gerado automaticamente para cada novo registro.
 
-Após isso criamos uma coluna chamada skin de valor inteiro limitado a 20 numeros tendo um valor padrão de 230 e a coluna dinheiro de valor inteiro limitado a 20 numeros como o valor padrão de 2000. Após isso nós definimos se queremos ou não receber o cache retornado como não queremos deixamos false.
+```sql
+`ID` int AUTO_INCREMENT PRIMARY KEY
+```
 
-Viu como é fácil criar um banco de dados e uma tabela em MySQL?
+- Nome:
+ - Tipo: varchar(24) (string com limite de 24 caracteres).
+ - Restrição: NOT NULL, ou seja, o campo não pode ficar vazio.
+
+```sql
+`Nome` varchar(24) NOT NULL  
+```
+
+- Senha:
+ - Mesma configuração da coluna Nome, pois também é uma string limitada a 24 caracteres e não pode ser nula.
+
+```sql
+`Senha` varchar(24) NOT NULL  
+```
+
+- Skin:
+ - Tipo: int (inteiro).
+ - Características: Tem um valor padrão de 230.
+
+```sql
+`Skin` int DEFAULT 230  
+```
+
+- Dinheiro:
+ - Tipo: int (inteiro).
+ - Características: Valor padrão de 2000.
+
+```sql
+`Dinheiro` int DEFAULT 2000  
+```
+
+### 3. Executando o comando no banco de dados
+
+Com o comando SQL pronto, usamos a função mysql_query para enviá-lo ao banco de dados, utilizando a variável Connection que criamos anteriormente para estabelecer a conexão.
+
+O parâmetro false no final indica que não queremos armazenar o resultado da consulta no cache, já que estamos apenas criando uma tabela.
+
+### 4. Resultado
+
+Com esses passos, sua tabela jogadores será criada com sucesso no banco de dados. Ela estará pronta para receber informações como ID, nome, senha, skin e dinheiro dos jogadores.
+
+### Dica Extra
+
+Se precisar criar mais tabelas no futuro, lembre-se de sempre usar o CREATE TABLE IF NOT EXISTS para evitar erros ao executar o comando em um banco de dados que já contém a tabela.
+
+Viu como é simples criar uma tabela no MySQL? Agora você pode organizar os dados do seu projeto de forma estruturada e eficiente!
 
 ## 🚀 INSERT-INTO
 
