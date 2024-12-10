@@ -134,33 +134,58 @@ Com o banco de dados criado e configurado, você já pode integrá-lo ao seu gam
 
 ## 🚀 Conexão
 
-Nesta parte iremos aprender a como criar um banco de dados e uma simples tabela.
-Em sua GM crie uma variavel com o prefix de MySQL, você pode optar por algo como: "new MySQL:Connection" é por esta variavel que iremos estabelecer uma conexao com o banco de dados.
+Nesta etapa, aprenderemos como criar um banco de dados, configurar uma conexão simples e verificar se ela foi estabelecida com sucesso.
 
-Após isso crie uma public, ela vai iniciar o banco de dados, você pode optar por algo como: 
+1. Criando uma variável para a conexão
 
-<p align="center">
-  <img src="/images/conexao.png" width="350" title="hover text">
-</p>
+No seu gamemode, crie uma variável para gerenciar a conexão com o banco de dados. É recomendável usar um prefixo que identifique claramente a relação com o MySQL, como:
 
-Nela vamos estabelecer a conexão da seguinte forma:
+'new MySQL:Connection;'
 
-<p align="center">
-  <img src="/images/conexao2.png" width="350" title="hover text">
-</p>
+Essa variável será usada para armazenar os dados da conexão ativa com o banco de dados.
 
-Aqui estamos a variavel Connection que criamos vai guardar a conexão com a função mysql_connect onde recebe os parametros, ip, user, password, database.
-No caso localhost por que estamos em uma conexão local, root por que é o user padrão de conexão local, senha não precisamos e database é o nome do database que você criou a alguns segundos atrás, lembra?
+2. Criando a função de inicialização da conexão
 
-Após isso iremos fazer uma verificação pra ver se tivemos sucesso ao tentar estabelecer a conexão da seguinte forma: 
+Agora, crie uma função pública responsável por estabelecer a conexão com o banco de dados. Um exemplo prático seria:
 
 <p align="center">
-  <img src="/images/conexao3.png" width="350" title="hover text">
-</p>
+  <img src="/images/conexao.png" width="350" title="Função de inicialização do banco de dados">
+</p>  
 
-com a função mysql_errno() verificamos se não existe nenhum erro na hora de se conectar ao database e imprimimos se tudo ocorreu corretamente caso contrário irá imprimir uma mensagem de erro.
 
-Após isso basta chamar a public em OnGamemodeInit.
+3. Estabelecendo a conexão
+
+Dentro dessa função, usaremos a função mysql_connect para estabelecer a conexão. Ela recebe os seguintes parâmetros:
+
+- IP: Endereço do servidor onde o banco está hospedado (ex.: localhost para conexões locais).
+- Usuário: Nome de usuário do banco de dados (ex.: root, padrão no XAMPP).
+- Senha: Senha do usuário (no XAMPP, geralmente não há senha configurada por padrão).
+- Nome do banco: Nome do banco de dados que criamos anteriormente.
+
+Um exemplo seria:
+
+<p align="center">
+  <img src="/images/conexao2.png" width="350" title="Exemplo de conexão MySQL no gamemode">
+</p>  
+
+
+4. Verificando se a conexão foi bem-sucedida
+
+Após tentar a conexão, é fundamental verificar se houve sucesso. Isso pode ser feito com a função mysql_errno(), que retorna o código do erro, caso exista.
+
+A verificação pode ser feita assim:
+
+<p align="center">
+  <img src="/images/conexao3.png" width="350" title="Verificação da conexão MySQL">
+</p>  
+
+
+- Caso a conexão seja bem-sucedida: Exibimos uma mensagem informando que tudo está funcionando corretamente.
+- Caso haja erro: Exibimos a mensagem de erro e abortamos o processo.
+
+5. Chamando a função no OnGameModeInit
+
+Por fim, chame a função de inicialização da conexão no callback OnGameModeInit, garantindo que o banco de dados seja configurado assim que o gamemode for carregado.
 
 ## 🚀 CREATE-TABLE
 
