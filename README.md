@@ -5,11 +5,13 @@
 
 - 1. [Apresentação](#-Apresentação)
 
-- 2. [Instalação](#-Instalação)
+- 2. [O que são SQL, MySQL e XAMPP?(#-O que são SQL, MySQL e XAMPP?)
 
-- 3. [XAMPP](#-XAMPP)
+- 3. [Instalação](#-Instalação)
 
-- 4. [Conexão](#-Conexão)
+- 4. [XAMPP](#-XAMPP)
+
+- 5. [Conexão](#-Conexão)
    
 - 6. [CREATE-TABLE](#-CREATE-TABLE)
 
