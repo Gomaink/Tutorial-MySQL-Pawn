@@ -32,9 +32,11 @@ Percebi que a comunidade de SA:MP carece de orientações claras sobre como inte
 Antes de começarmos, quero destacar que, ao longo deste tutorial, utilizaremos uma estrutura padrão para todos os exemplos e módulos, garantindo consistência e clareza.
 
 Pré-requisitos:
+
 Este tutorial foca exclusivamente no uso do MySQL com SA:MP. Portanto, é importante que você já tenha familiaridade com variáveis e funções nativas do SA:MP, pois não abordaremos esses conceitos aqui.
 
 Créditos:
+
 Desenvolvido por Gomaink.
 
 ## 🚀 O que são SQL, MySQL e XAMPP?
