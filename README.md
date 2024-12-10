@@ -213,39 +213,39 @@ No exemplo abaixo, criamos uma tabela chamada jogadores, mas só se ela ainda n�
 Aqui está a explicação das colunas que criamos no exemplo:
 
 - ID:
- - Tipo: int (inteiro).
- - Características: É a Primary Key (chave primária) da tabela, ou seja, identifica cada registro de forma única. Também é configurada como AUTO_INCREMENT, o que faz com que o valor seja gerado automaticamente para cada novo registro.
+    - Tipo: int (inteiro).
+    - Características: É a Primary Key (chave primária) da tabela, ou seja, identifica cada registro de forma única. Também é configurada como AUTO_INCREMENT, o que faz com que o valor seja gerado automaticamente para cada novo registro.
 
 ```sql
 `ID` int AUTO_INCREMENT PRIMARY KEY
 ```
 
 - Nome:
- - Tipo: varchar(24) (string com limite de 24 caracteres).
- - Restrição: NOT NULL, ou seja, o campo não pode ficar vazio.
+    - Tipo: varchar(24) (string com limite de 24 caracteres).
+    - Restrição: NOT NULL, ou seja, o campo não pode ficar vazio.
 
 ```sql
 `Nome` varchar(24) NOT NULL  
 ```
 
 - Senha:
- - Mesma configuração da coluna Nome, pois também é uma string limitada a 24 caracteres e não pode ser nula.
+    - Mesma configuração da coluna Nome, pois também é uma string limitada a 24 caracteres e não pode ser nula.
 
 ```sql
 `Senha` varchar(24) NOT NULL  
 ```
 
 - Skin:
- - Tipo: int (inteiro).
- - Características: Tem um valor padrão de 230.
+    - Tipo: int (inteiro).
+    - Características: Tem um valor padrão de 230.
 
 ```sql
 `Skin` int DEFAULT 230  
 ```
 
 - Dinheiro:
- - Tipo: int (inteiro).
- - Características: Valor padrão de 2000.
+    - Tipo: int (inteiro).
+    - Características: Valor padrão de 2000.
 
 ```sql
 `Dinheiro` int DEFAULT 2000  
