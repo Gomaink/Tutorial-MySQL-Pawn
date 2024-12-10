@@ -269,19 +269,43 @@ Viu como é simples criar uma tabela no MySQL? Agora você pode organizar os dad
 
 ## 🚀 INSERT-INTO
 
-A função INSERT INTO funciona como proprio nome diz, "INSERIR EM" com ela você pode inserir dados em uma tabela.
+A função INSERT INTO é usada para inserir novos dados em uma tabela do banco de dados. Como o nome sugere, ela permite adicionar registros completos, especificando as colunas e seus respectivos valores.
 
-Um exemplo de INSERT INTO é ao o jogador passar por uma tela de registro os dados deles serem inseridos na tabela, por exemplo:
+### 1. Como funciona o INSERT INTO
+
+A sintaxe básica de um comando INSERT INTO é:
+
+```sql
+INSERT INTO tabela (coluna1, coluna2, ...) VALUES (valor1, valor2, ...);  
+```
+
+Com isso, você pode adicionar dados diretamente nas colunas especificadas, criando um novo registro na tabela.
+
+### 2. Exemplo no Gamemode
+
+No contexto de um gamemode, um bom exemplo seria salvar os dados de um jogador que acabou de se registrar. Veja o exemplo abaixo:
 
 <p align="center">
-  <img src="/images/insert.png" width="750" title="hover text">
-</p>
+  <img src="/images/insert.png" width="750" title="Exemplo de uso do INSERT INTO">
+</p>  
 
-Acima nós formatamos uma string com a própria função format do MySQL, nela nós inserimos em contas nas colunas Nome, Senha os valores formatados, no caso o Nome e o que o usuário supostamente digitou em um input. É uma função bem simples e bem poderosa.
 
-Lembrando que você está inserindo dados e não atualizando-os, existe uma função especifica para atualizar dados que iremos ver mais pare frente.
+Aqui está o que acontece nesse exemplo:
+- Usamos a função format para construir o comando SQL dinamicamente, substituindo as variáveis nome e senha pelos valores fornecidos pelo jogador.
+- O comando resultante insere os dados na tabela contas, especificamente nas colunas Nome e Senha.
 
-Mais sobre a função INSERT INTO: https://www.w3schools.com/sql/sql_insert.asp
+### 3. Diferença entre Inserir e Atualizar Dados
+
+Lembre-se de que o INSERT INTO é usado exclusivamente para adicionar novos registros à tabela. Se você quiser modificar um registro já existente, será necessário usar a função UPDATE, que será explicada mais à frente.
+
+### 4. Aplicação Prática
+
+Essa funcionalidade é muito útil em cenários como:
+- Registrar novos jogadores.
+- Salvar configurações ou estatísticas iniciais.
+- Registrar logs de eventos, como conexões e desconexões.
+
+Com o comando INSERT INTO, você tem uma ferramenta poderosa para gerenciar os dados no seu projeto de forma simples e eficiente.
 
 ## 🚀 UPDATE
 
