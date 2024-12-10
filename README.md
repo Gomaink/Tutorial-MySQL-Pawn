@@ -5,7 +5,7 @@
 
 - 1. [Apresentação](#-Apresentação)
 
-- 2. [O que são SQL, MySQL e XAMPP?(#-O que são SQL, MySQL e XAMPP?)
+- 2. [O que são SQL, MySQL e XAMPP?](#-O que são SQL, MySQL e XAMPP?)
 
 - 3. [Instalação](#-Instalação)
 
