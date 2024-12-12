@@ -357,7 +357,7 @@ Atualize apenas os dados necessários. Por exemplo, não atualize colunas que n�
 - Evite Sobrescritas Acidentais:
 Sempre use o WHERE para especificar qual registro deve ser atualizado. Um comando UPDATE sem WHERE irá alterar todos os registros da tabela, o que pode causar grandes problemas.
 
-###5. Uso Prático
+### 5. Uso Prático
 
 O comando UPDATE é ideal para diversas situações, como:
 - Salvar o progresso de um jogador.
