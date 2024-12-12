@@ -236,7 +236,7 @@ Aqui está a explicação das colunas que criamos no exemplo:
     - Mesma configuração da coluna Nome, pois também é uma string limitada a 24 caracteres e não pode ser nula.
 
 ```sql
-`Senha` varchar(24) NOT NULL  
+`Senha` varchar(255) NOT NULL  
 ```
 
 - Skin:
@@ -244,7 +244,7 @@ Aqui está a explicação das colunas que criamos no exemplo:
     - Características: Tem um valor padrão de 230.
 
 ```sql
-`Skin` int DEFAULT 230  
+`Skin` int(10) NOT NULL DEFAULT 230  
 ```
 
 - Dinheiro:
@@ -252,7 +252,7 @@ Aqui está a explicação das colunas que criamos no exemplo:
     - Características: Valor padrão de 2000.
 
 ```sql
-`Dinheiro` int DEFAULT 2000  
+`Dinheiro` int(20) NOT NULL DEFAULT 2000  
 ```
 
 ### 3. Executando o comando no banco de dados
